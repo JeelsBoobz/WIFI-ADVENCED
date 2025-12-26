@@ -1302,7 +1302,7 @@ class MenuHandler:
         """Main menu loop"""
         while True:
             os.system('clear' if os.name == 'posix' else 'cls')
-            show_Cyber7F BD_banner()
+            show_ Cyber7F BD _banner()
             show_main_menu()
             
             try:
@@ -2064,7 +2064,7 @@ Example:
 """
 
 
-def show_Cyber7F BD_banner():
+def show_ Cyber7F BD _banner():
     current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     banner_text = f"""
 ╔═══════════════════ LIVE STATISTICS ═══════════════════╗
@@ -2251,10 +2251,10 @@ if __name__ == '__main__':
         print('[*] Randomizing MAC address for stealth...')
         randomize_mac(args.interface)
 
-    show_Cyber7F BD_banner()
+    show_ Cyber7F BD _banner()
     while True:
         try:
-            show_Cyber7F BD_banner()
+            show_ Cyber7F BD _banner()
             companion = Companion(args.interface, args.write, print_debug=args.verbose)
             if args.pbc:
                 companion.single_connection(pbc_mode=True)
