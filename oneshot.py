@@ -39,7 +39,7 @@ class NetworkAddress:
             self._str_repr = self._int2mac(mac)
         elif isinstance(mac, str):
             self._str_repr = mac.replace('-', ':').replace('.', ':').upper()
-            self._int_repr = self._mac2int(mac)W8
+            self._int_repr = self._mac2int(mac)
         else:
             raise ValueError('MAC address must be string or integer')
 
