@@ -1745,11 +1745,16 @@ class Companion:
                 break
 
     def cleanup(self):
-        self.retsock.close()
-        self.wpas.terminate()
-        os.remove(self.res_socket_file)
-        shutil.rmtree(self.tempdir, ignore_errors=True)
-        os.remove(self.tempconf)
+        if self.retsock:
+            self.retsock.close()
+        if self.wpas:
+            self.wpas.terminate()
+        if os.path.exists(self.res_socket_file):
+            os.remove(self.res_socket_file)
+        if os.path.exists(self.tempdir):
+            shutil.rmtree(self.tempdir, ignore_errors=True)
+        if os.path.exists(self.tempconf):
+            os.remove(self.tempconf)
 
     def __del__(self):
         self.cleanup()
